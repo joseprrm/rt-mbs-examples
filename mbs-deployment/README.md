@@ -1,4 +1,4 @@
-# 5g-mbs-dev
+# 5g mbs developer deployment
 This repository contains the deployment of the MBS 5G core, UE, gNB and MBSTF. This deployment is aimed to development, not a final deployment. The images contain a lot extra packages to ease debugging and testing.
 
 > [!NOTE]
@@ -24,18 +24,17 @@ github_user=<github_user>
 github_token=<github_toke>
 
 cd $HOME/Developer
-git clone "https://${github_user}:${github_token}@github.com/iTEAM-MCG/5g-mbs-dev.git"
 git clone -b upv-mbs "https://${github_user}:${github_token}@github.com/5G-MAG/srsRAN_4G_private.git" srsRAN_4G
 git clone -b du-to-mix "https://${github_user}:${github_token}@github.com/5G-MAG/rt-srsRAN_Project_private.git" rt-srsRAN_Project
 git clone -b 5mbs-development "https://${github_user}:${github_token}@github.com/5G-MAG/open5gs.git"
-git clone -b development --recurse-submodules https://github.com/5G-MAG/rt-mbs-transport-function.git
-git clone -b development https://github.com/5G-MAG/rt-mbs-examples.git
+git clone -b development --recurse-submodules https://${github_user}:${github_token}github.com/5G-MAG/rt-mbs-transport-function.git
+git clone -b development https://${github_user}:${github_token}github.com/5G-MAG/rt-mbs-examples.git
 ```
 
 ## Create .env file
 .env contains different variables that affect the deployment. You can create it from the template:
 ```
-cd $HOME/Developer/5g-mbs-dev
+cd $HOME/Developer/rt-mbs-examples/mbs-deployment
 cp env.template .env
 
 # modify DOCKER_HOST_IP variable with the ip of the intarface that has the default route. Works for simple setups, edit manually if it fails.
@@ -43,9 +42,9 @@ IP=$(ip -o a show | grep $(ip -o r show | grep default | awk '{print $5}') | gre
 sed -i "s/<your_user>/$USER/;s/<your_ip>/$IP/" .env
 ```
 
-## cd to the 5g-mbs-dev directory
+## cd to the mbs-deployment directory
 ```
-cd $HOME/Developer/5g-mbs-dev
+cd $HOME/Developer/rt-mbs-examples/mbs-deployment
 ```
 
 ## Build the images
