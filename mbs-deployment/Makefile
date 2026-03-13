@@ -1,7 +1,7 @@
 # include docker-compose .env file
 include .env
 
-.PHONY: build-all build-base-open5gs build-base-srsran-project build-base-srsran-4g build-gnb build-ue build-af build-gnuradio compile-open5gs compile-gnb compile-ue compile-all gdb-upf gdb-ue up down restart ps copyvideo
+.PHONY: build-all build-base-open5gs build-base-srsran-project build-base-srsran-4g build-gnb build-ue build-af build-gnuradio compile-open5gs compile-gnb compile-ue compile-all gdb-upf gdb-ue up down restart ps copyvideo copyvideo1 copyvideo2 build-mbstf build-mediaserver ips mpvhost
 
 build-all:
 	docker buildx bake
@@ -51,7 +51,6 @@ down:
 	docker compose -f compose-files/${COMPOSE_DEPLOYMENT}/docker-compose.yaml --env-file=.env down
 
 restart:
-#	docker stop -t 0 $$(docker ps -aq)
 	make down && make up
 
 ps:
