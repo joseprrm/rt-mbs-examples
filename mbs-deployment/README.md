@@ -27,8 +27,8 @@ cd $HOME/Developer
 git clone -b upv-mbs "https://${github_user}:${github_token}@github.com/5G-MAG/srsRAN_4G_private.git" srsRAN_4G
 git clone -b du-to-mix "https://${github_user}:${github_token}@github.com/5G-MAG/rt-srsRAN_Project_private.git" rt-srsRAN_Project
 git clone -b 5mbs-development "https://${github_user}:${github_token}@github.com/5G-MAG/open5gs.git"
-git clone -b development --recurse-submodules https://${github_user}:${github_token}github.com/5G-MAG/rt-mbs-transport-function.git
-git clone -b development https://${github_user}:${github_token}github.com/5G-MAG/rt-mbs-examples.git
+git clone -b development --recurse-submodules https://${github_user}:${github_token}@github.com/5G-MAG/rt-mbs-transport-function.git
+git clone -b development https://${github_user}:${github_token}@github.com/5G-MAG/rt-mbs-examples.git
 ```
 
 ## Create .env file
