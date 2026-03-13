@@ -154,7 +154,7 @@ services:
       - source: mb_amf_config
         target: /etc/open5gs/custom/mb-amf.yaml
     volumes:
-      - ../../../open5gs:/open5gs
+      - ${COMPILE_PATH}/open5gs:/open5gs
     depends_on:
       - nrf
 
@@ -172,7 +172,7 @@ services:
       - source: mb_smf_config
         target: /etc/open5gs/custom/mb-smf.yaml
     volumes:
-      - ../../../open5gs:/open5gs
+      - ${COMPILE_PATH}/open5gs:/open5gs
     depends_on:
       - nrf
       - mb-upf
@@ -221,7 +221,7 @@ services:
       - source: mb_upf_config
         target: /etc/open5gs/custom/mb-upf.yaml
     volumes:
-      - ../../../open5gs:/open5gs
+      - ${COMPILE_PATH}/open5gs:/open5gs
     privileged: true
     cap_add:
       - NET_ADMIN
@@ -258,7 +258,7 @@ services:
       - source: mb_gnb_config
         target: /etc/rt-srsRAN_Project/custom/mb-gnb.yaml
     volumes:
-      - ../../../rt-srsRAN_Project:/rt-srsRAN_Project
+      - ${COMPILE_PATH}/rt-srsRAN_Project:/rt-srsRAN_Project
     privileged: true
     cap_add:
       - NET_ADMIN
@@ -281,7 +281,7 @@ services:
       - source: mb_ue1_config
         target: /etc/srsRAN_4G/custom/mb-ue.conf
     volumes:
-      - ../../../srsRAN_4G:/srsRAN_4G
+      - ${COMPILE_PATH}/srsRAN_4G:/srsRAN_4G
     privileged: true
     cap_add:
       - NET_ADMIN
@@ -305,7 +305,7 @@ services:
       - source: mb_ue2_config
         target: /etc/srsRAN_4G/custom/mb-ue.conf
     volumes:
-      - ../../../srsRAN_4G:/srsRAN_4G
+      - ${COMPILE_PATH}/srsRAN_4G:/srsRAN_4G
     privileged: true
     cap_add:
       - NET_ADMIN
